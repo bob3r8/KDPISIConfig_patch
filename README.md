@@ -1,5 +1,10 @@
-# EN:
-Patch for Yolo v5s inference with Kneron 720 with Python script. KDPISIConfig Python constructor now formats data correctly to launch net with extra parameters.
+# EN
+Patch for Kneron's host_lib. I faced issues launching networks by start_isi_mode_ext from kdp_wrapper.py. That was because of incorrect ISI configuration. KDPISIConfig Python constructor with this patch formats data correctly to launch net with extra parameters, but now you have to specify variables types:
+`f` - for float
+`H` - for unsigned int16
+`h` - for signed int16
+`I` - for unsigned int32
+`i` - for signed int32
 
 To apply patch:
 1. Download and unzip host_lib from [here](https://www.kneron.com/developer_center/).</br>
@@ -23,8 +28,13 @@ To apply patch:
     ```
     cd python
     sudo python3 -t KL720-cam_isi_yolov5s_example
-# RU:
-Патч для inferenc'а Yolo v5s на Kneron 720 с помощью Python скрипта. Конструктор KDPISIConfig в Python теперь форматирует информацию корректно, что позволяет запускать сети с дополнительными параметрами. 
+# RU
+Патч для host_lib Kneron'а. Я встретился с проблемами при запуске сетей с помощью функции start_isi_mode_ext из kdp_wrapper.py. Это было из-за неправильной конфигурации для ISI. Конструктор KDPISIConfig в Python теперь форматирует информацию корректно, что позволяет запускать сети с дополнительными параметрами, однако теперь необходимо указывать типы переменных:
+`f` - для float
+`H` - для unsigned int16
+`h` - для signed int16
+`I` - для unsigned int32
+`i` - для signed int32
 
 Чтобы применить патч:
 1. Скачайте и распакуйте host_lib [отсюда](https://www.kneron.com/developer_center/).</br>

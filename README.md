@@ -7,7 +7,7 @@ To apply patch:
 
 1. Copy patch to your host_lib directory:
     ```
-    cp yolov5s720.patch /path/to/host_lib
+    cp KDPISIConfig-fix.patch /path/to/host_lib
 1. Enter host_lib directory:
     ```
     cd /path/to/host_lib
@@ -31,7 +31,7 @@ To apply patch:
    Установите зависимости, более подробная инструкция доступно [здесь](http://doc.kneron.com/docs/#720_1.3.0/getting_start_720/).
 1. Скопируйте патч в директорию host_lib:
    ```
-   cp yolov5s720.patch /path/to/host_lib
+   cp KDPISIConfig-fix.patch /path/to/host_lib
 1. Войдите в директорию host_lib:
    ```
    cd /path/to/host_lib
@@ -42,7 +42,7 @@ To apply patch:
     git commit
 1. Примените патч:
     ```
-    git apply --reject --whitespace=fix yolov5s720.patch`
+    git apply --reject --whitespace=fix  KDPISIConfig-fix.patch`
 1. (Дополнительно) Запустите пример Yolov5s на Python:
     ```
     cd python

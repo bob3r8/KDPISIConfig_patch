@@ -1,3 +1,4 @@
+# EN:
 Patch for Yolo v5s inference with Kneron 720 with Python script. KDPISIConfig Python constructor now formats data correctly to launch net with extra parameters.
 
 To apply patch:
@@ -22,7 +23,7 @@ To apply patch:
     ```
     cd python
     sudo python3 -t KL720-cam_isi_yolov5s_example
-
+# RU:
 Патч для inferenc'а Yolo v5s на Kneron 720 с помощью Python скрипта. Конструктор KDPISIConfig в Python теперь форматирует информацию корректно, что позволяет запускать сети с дополнительными параметрами. 
 
 Чтобы применить патч:
@@ -46,4 +47,3 @@ To apply patch:
     ```
     cd python
     sudo python3 -t KL720-cam_isi_yolov5s_example
-

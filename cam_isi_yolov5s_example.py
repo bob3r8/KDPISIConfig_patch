@@ -25,7 +25,7 @@ def yolo_v5s_detection(device_index):
     ext_param_types = ['f', 'f', 'I', 'H', 'H', 'H', 'H']
     image_format = constants.IMAGE_FORMAT_SUB128 | constants.NPU_FORMAT_RGB565 | constants.IMAGE_FORMAT_CHANGE_ASPECT_RATIO
     isi_configuration = constants.KDPISIConfig(app_id, res_buf_size, image_source_w, image_source_h, image_format, ext_param, ext_param_types)
-    cfg_size = sys.getsizeof(isi_configuration)
+    cfg_size = 136
     image_buf_size = kdp_wrapper.start_isi_mode_ext(device_index, isi_configuration, cfg_size)
 
     if image_buf_size < 3:

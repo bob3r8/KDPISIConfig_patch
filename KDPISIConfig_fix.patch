@@ -1,13 +1,13 @@
-From 9261ab23e7ee3aabc49471281fc8df85d4b1c01b Mon Sep 17 00:00:00 2001
+From 12600fe25484284407058568cf93339d089823f7 Mon Sep 17 00:00:00 2001
 From: bobr <mrthebober@gmail.com>
-Date: Mon, 27 Sep 2021 16:59:34 +0700
-Subject: [PATCH] KDPISIConfig patch
+Date: Wed, 29 Sep 2021 11:05:07 +0700
+Subject: [PATCH] KDPISIConfig fix
 
-KDPISIConfig patch and yolov5s on Kneron 720 example.
+KDPISIConfig object constructor fixed. Example attached.
 ---
  python/common/constants.py                    | 17 +++-
- .../examples_kl720/cam_isi_yolov5s_example.py | 80 +++++++++++++++++++
- 2 files changed, 95 insertions(+), 2 deletions(-)
+ .../examples_kl720/cam_isi_yolov5s_example.py | 81 +++++++++++++++++++
+ 2 files changed, 96 insertions(+), 2 deletions(-)
  create mode 100644 python/examples_kl720/cam_isi_yolov5s_example.py
 
 diff --git a/python/common/constants.py b/python/common/constants.py
@@ -52,10 +52,10 @@ index 3e32f93..aea1363 100644
          extra = "\n"
 diff --git a/python/examples_kl720/cam_isi_yolov5s_example.py b/python/examples_kl720/cam_isi_yolov5s_example.py
 new file mode 100644
-index 0000000..5645259
+index 0000000..1e89f20
 --- /dev/null
 +++ b/python/examples_kl720/cam_isi_yolov5s_example.py
-@@ -0,0 +1,80 @@
+@@ -0,0 +1,81 @@
 +from common import constants, kdp_wrapper
 +import kdp_host_api as api
 +import time
@@ -83,7 +83,7 @@ index 0000000..5645259
 +    ext_param_types = ['f', 'f', 'I', 'H', 'H', 'H', 'H']
 +    image_format = constants.IMAGE_FORMAT_SUB128 | constants.NPU_FORMAT_RGB565 | constants.IMAGE_FORMAT_CHANGE_ASPECT_RATIO
 +    isi_configuration = constants.KDPISIConfig(app_id, res_buf_size, image_source_w, image_source_h, image_format, ext_param, ext_param_types)
-+    cfg_size = sys.getsizeof(isi_configuration)
++    cfg_size = 136
 +    image_buf_size = kdp_wrapper.start_isi_mode_ext(device_index, isi_configuration, cfg_size)
 +
 +    if image_buf_size < 3:
@@ -136,6 +136,7 @@ index 0000000..5645259
 +    ret = yolo_v5s_detection(device_index)
 +    kdp_wrapper.end_det(device_index)
 +    return ret
++
 -- 
 2.17.1
 

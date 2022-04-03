@@ -1,3 +1,5 @@
+# DEPRECIATED DUE HOST_LIB DEPRECIATION
+
 # EN
 Patch for Kneron's host_lib. I faced issues launching networks by start_isi_mode_ext from kdp_wrapper.py. That was because of incorrect ISI configuration. KDPISIConfig Python constructor with this patch formats data correctly to launch net with extra parameters, but now you have to specify variables types:</br>
 `f` - for float</br>
@@ -28,6 +30,9 @@ To apply patch:
     ```
     cd python
     sudo python3 -t KL720-cam_isi_yolov5s_example
+ 
+# УСТАРЕЛО ПО ПРИЧИНЕ УСТАРЕВАНИЯ HOST_LIB
+
 # RU
 Патч для host_lib Kneron'а. Я встретился с проблемами при запуске сетей с помощью функции start_isi_mode_ext из kdp_wrapper.py. Это было из-за неправильной конфигурации для ISI. Конструктор KDPISIConfig в Python теперь форматирует информацию корректно, что позволяет запускать сети с дополнительными параметрами, однако теперь необходимо указывать типы переменных:</br>
 `f` - для float</br>
